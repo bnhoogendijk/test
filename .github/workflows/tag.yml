@@ -20,6 +20,8 @@ jobs:
           echo ${GITHUB_REF_NAME}
           echo  ${GITHUB_REF}
           echo  ${GITHUB_BASE_REF}
+          echo ${{github.event.head_commit}}
+          echo ${{github.event}}
       - name: push to staging
         run: |
           git push origin ${GITHUB_REF_NAME}:staging
