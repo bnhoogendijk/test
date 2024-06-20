@@ -9,6 +9,9 @@ on:
 
 jobs:
   build-and-deploy:
+    if:
+      ${{ github.ref_name == 'refs/tags/*' && github.base_ref == 'refs/heads/main' }}
+      # == "refs/tags/*"  && $GITHUB_BASE_REF == "refs/heads/develop" }}
     runs-on: ubuntu-latest
 
     steps:
