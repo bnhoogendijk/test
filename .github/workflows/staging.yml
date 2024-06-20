@@ -1,0 +1,20 @@
+name: test
+
+on:
+  push:
+    branches:
+      - staging
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Test
+        run: |
+          echo "joe"
+          echo ${GITHUB_REF_NAME}
+          echo  ${GITHUB_REF}
+          echo  ${GITHUB_BASE_REF}
