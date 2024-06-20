@@ -15,6 +15,6 @@ jobs:
       - name: Test
         run: |
           echo "joe"
-          echo ${GITHUB_REF_NAME}
+          # echo $(git describe --tag ${github})
           echo  ${GITHUB_REF}
           echo  ${GITHUB_BASE_REF}

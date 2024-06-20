@@ -2,8 +2,8 @@ name: test
 
 on:
   push:
-    tags:
-      - "v[0-9]+.[0-9]+.[0-9]+"
+    # tags:
+    #   - "v[0-9]+.[0-9]+.[0-9]+"
     branches:
       - main
 
@@ -22,11 +22,16 @@ jobs:
           echo ${GITHUB_REF_NAME}
           echo  ${GITHUB_REF}
           echo  ${GITHUB_BASE_REF}
-          echo ${{github.event.head_commit.message}}
+          echo ${{github.event.head_commit.id}}
+          echo ${{github.event.head_commit.tree_id}}
+
           echo ${{github.event.base_ref}}
           echo ${{github.event.ref}}
-          echo ${{github.head_ref}}
           echo ${{github.ref_type}}
+      - name: Set env
+        run: echo "GITHUB_TAG=$(git describe --tag $GITHUB_SHA)" >> $GITHUB_ENV
+      - name: echo env
+        run: echo $GITHUB_TAG
       - name: push to staging
         run: |
           git push origin ${GITHUB_REF_NAME}:staging
