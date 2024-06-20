@@ -42,7 +42,7 @@ jobs:
         run: echo $GITHUB_TAG
       - name: push to staging
         run: |
-          git push origin ${GITHUB_TAG}:staging
+          git push origin ${GITHUB_TAG}:staging --force
       # - name: Switch to staging
       #   uses: actions/checkout@v4
       #   with:
