@@ -28,6 +28,7 @@ jobs:
           echo "github.event.ref: ${{github.event.ref}}"
           echo "github.ref_type: ${{github.ref_type}}"
           echo "GITHUB_SHA: ${GITHUB_SHA}"
+          git fetch --tags
           git describe --tag 2c02dd05fd2cb0cf8f5bf50baa52d86b100f846c
           git describe --tag $GITHUB_SHA
 
