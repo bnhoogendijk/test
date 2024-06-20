@@ -22,7 +22,7 @@ jobs:
           echo "GITHUB_REF_NAME: ${GITHUB_REF_NAME}"
           echo "GITHUB_REF:  ${GITHUB_REF}"
           echo "GITHUB_BASE_REF:  ${GITHUB_BASE_REF}"
-          echo "github.event.head_commi.id: "${{github.event.head_commit.id}}"
+          echo "github.event.head_commit.id: ${{github.event.head_commit.id}}"
           echo "github.event.head_commit.tree_id: ${{github.event.head_commit.tree_id}}"
           echo "github.event.base_ref: ${{github.event.base_ref}}"
           echo "github.event.ref: ${{github.event.ref}}"
