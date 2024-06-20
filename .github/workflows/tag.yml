@@ -28,6 +28,7 @@ jobs:
           echo "github.event.ref: ${{github.event.ref}}"
           echo "github.ref_type: ${{github.ref_type}}"
           echo "GITHUB_SHA: ${GITHUB_SHA}"
+          echo $(git describe --tag 2c02dd05fd2cb0cf8f5bf50baa52d86b100f846c)
           echo $(git describe --tag $GITHUB_SHA)
       - name: Set env
         run: echo "GITHUB_TAG=$(git describe --tag $GITHUB_SHA)" >> $GITHUB_ENV
